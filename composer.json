@@ -1,0 +1,15 @@
+{
+    "require": {
+        "rubix/ml": "^2.3",
+        "gburtini/distributions": "^0.0.2",
+        "php-64bit": ">=8.0",
+        "ext-mbstring": "*",
+        "ext-tensor": "*",
+        "ext-readline": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Darvin\\LSTM\\": "src/"
+        }
+    }
+}
