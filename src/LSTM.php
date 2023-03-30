@@ -2,30 +2,17 @@
 
 namespace Darvin\LSTM;
 
-use Darvin\LSTM\Helpers\MatrixHelper;
-use Darvin\LSTM\Helpers\Random;
+use Darvin\LSTM\Helpers\{MatrixHelper, Random};
+use Rubix\ML\Helpers\Params;
 use JetBrains\PhpStorm\ArrayShape;
 use Rubix\ML\Datasets\Dataset;
-use Rubix\ML\DataType;
-use Rubix\ML\Estimator;
-use Rubix\ML\EstimatorType;
+use Rubix\ML\{Verbose, DataType, Estimator, EstimatorType,Learner};
 use Rubix\ML\Exceptions\InvalidArgumentException;
-use Rubix\ML\Helpers\Params;
-use Rubix\ML\Learner;
-use Rubix\ML\NeuralNet\ActivationFunctions\Sigmoid;
-use Rubix\ML\NeuralNet\ActivationFunctions\Softmax;
-use Rubix\ML\Online;
-use Rubix\ML\Persistable;
-use Rubix\ML\Probabilistic;
-use Rubix\ML\Specifications\DatasetHasDimensionality;
-use Rubix\ML\Specifications\DatasetIsNotEmpty;
-use Rubix\ML\Specifications\SamplesAreCompatibleWithEstimator;
-use Rubix\ML\Specifications\SpecificationChain;
-use Rubix\ML\Traits\AutotrackRevisions;
-use Rubix\ML\Traits\LoggerAware;
-use Rubix\ML\Verbose;
-use Tensor\Matrix;
-use Tensor\Vector;
+use Rubix\ML\NeuralNet\ActivationFunctions\{Sigmoid, Softmax};
+use Rubix\ML\{Online, Persistable, Probabilistic};
+use Rubix\ML\Specifications\{DatasetHasDimensionality, DatasetIsNotEmpty, SamplesAreCompatibleWithEstimator, SpecificationChain};
+use Rubix\ML\Traits\{AutotrackRevisions, LoggerAware};
+use Tensor\{Matrix, Vector};
 
 
 class LSTM implements Estimator, Learner, Online, Probabilistic, Verbose, Persistable
@@ -233,7 +220,7 @@ class LSTM implements Estimator, Learner, Online, Probabilistic, Verbose, Persis
 
             $x = MatrixHelper::zeros($this->vocabSize, 1);
             // TODO: переделать так чтобы передавать векторы в forwardStep (x) а не матрицы
-            Helpers\MatrixHelper::setVectorAt($idx, $x, Vector::build([1]));
+            MatrixHelper::setVectorAt($idx, $x, Vector::build([1]));
             $sampleString [] = $this->indexToToken[$idx];
         }
         return implode(" ", $sampleString);
