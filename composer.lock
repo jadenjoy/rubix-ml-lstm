@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5231543db889575e0dfcf0985345d789",
+    "content-hash": "0668903903777afcc97a83f956786628",
     "packages": [
         {
             "name": "amphp/amp",
@@ -174,16 +174,16 @@
         },
         {
             "name": "amphp/parallel",
-            "version": "v1.4.2",
+            "version": "v1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/parallel.git",
-                "reference": "75853e1623efa5aa5e65e986ec9a97db573a5267"
+                "reference": "3aac213ba7858566fd83d38ccb85b91b2d652cb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/parallel/zipball/75853e1623efa5aa5e65e986ec9a97db573a5267",
-                "reference": "75853e1623efa5aa5e65e986ec9a97db573a5267",
+                "url": "https://api.github.com/repos/amphp/parallel/zipball/3aac213ba7858566fd83d38ccb85b91b2d652cb0",
+                "reference": "3aac213ba7858566fd83d38ccb85b91b2d652cb0",
                 "shasum": ""
             },
             "require": {
@@ -236,7 +236,7 @@
             ],
             "support": {
                 "issues": "https://github.com/amphp/parallel/issues",
-                "source": "https://github.com/amphp/parallel/tree/v1.4.2"
+                "source": "https://github.com/amphp/parallel/tree/v1.4.3"
             },
             "funding": [
                 {
@@ -244,7 +244,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-30T00:21:42+00:00"
+            "time": "2023-03-23T08:04:23+00:00"
         },
         {
             "name": "amphp/parser",
@@ -1794,9 +1794,9 @@
     "prefer-lowest": false,
     "platform": {
         "php-64bit": ">=8.0",
-        "ext-ffi": "*",
         "ext-mbstring": "*",
-        "ext-tensor": "*"
+        "ext-tensor": "*",
+        "ext-readline": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"

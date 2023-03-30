@@ -201,8 +201,8 @@ class LSTM implements Estimator, Learner, Online, Probabilistic, Verbose, Persis
     }
 
     /**
-     * @param $hPrev
-     * @param $cPrev
+     * @param Matrix $hPrev
+     * @param Matrix $cPrev
      * @param $sampleSize
      * @param Dataset|null $dataset
      * @return string
@@ -302,7 +302,6 @@ class LSTM implements Estimator, Learner, Online, Probabilistic, Verbose, Persis
         ])->check();
 
         $this->logger?->info("Training $this");
-        $snapshot = null;
 
         $J = [];
 
@@ -328,10 +327,9 @@ class LSTM implements Estimator, Learner, Online, Probabilistic, Verbose, Persis
 
                 if ($this->logger) {
                     if ($j % 400000 === 0) {
-                        echo sprintf("Epoch: %s\tBatch: %s - %s\tLoss:%s\n",
-                            $epoch, $j, $j + $this->seqLen, round($this->smoothLoss, 2));
                         $sample = $this->sample($this->hPrev, $this->cPrev, 12);
-                        echo $sample . "\n";
+                        $this->logger->info(sprintf("Epoch: %s\tBatch: %s - %s\tLoss:%s\n%s\n",
+                            $epoch, $j, $j + $this->seqLen, round($this->smoothLoss, 2), $sample));
                     }
                 }
             }
