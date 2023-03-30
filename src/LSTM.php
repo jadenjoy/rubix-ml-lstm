@@ -223,7 +223,7 @@ class LSTM implements Estimator, Learner, Online, Probabilistic, Verbose, Persis
             MatrixHelper::setVectorAt($idx, $x, Vector::build([1]));
             $sampleString [] = $this->indexToToken[$idx];
         }
-        return implode(" ", $sampleString);
+        return implode("", $sampleString);
     }
 
     /**
