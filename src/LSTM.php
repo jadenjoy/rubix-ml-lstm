@@ -590,6 +590,9 @@ class LSTM implements Estimator, Learner, Online, Probabilistic, Verbose, Persis
         }
     }
 
+    /**
+     * @param $batchNum
+     */
     public function updateParams($batchNum)
     {
 
